@@ -4,7 +4,7 @@ Kenzie assignment: String1
 """
 # Your name, plus anyone who helped you with this assignment.
 # Give credit where credit is due.
-__author__ = "???"
+__author__ = "Diarte Jeffcoat w/help from [Stack Overflow](https://stackoverflow.com/questions/30740827/python-string-replacement-except-first-character)"
 
 # Copyright 2010 Google Inc.
 # Licensed under the Apache License, Version 2.0
@@ -28,8 +28,9 @@ __author__ = "???"
 
 
 def donuts(count):
-    # your code here
-    return
+    if count < 10:
+        return f"Number of donuts: {count}"
+    return f"Number of donuts: many"
 
 
 # B. both_ends
@@ -42,8 +43,9 @@ def donuts(count):
 
 
 def both_ends(s):
-    # your code here
-    return
+    if len(s) < 2:
+        return ""
+    return s[0:2] + s[-2:]
 
 
 # C. fix_start
@@ -58,8 +60,9 @@ def both_ends(s):
 
 
 def fix_start(s):
-    # your code here
-    return
+    char = s[0]
+    str = s[1:].replace(char, "*")
+    return "".join((char, str))
 
 
 # D. mix_up
@@ -73,8 +76,9 @@ def fix_start(s):
 
 
 def mix_up(a, b):
-    # your code here
-    return
+    str1 = a.replace(a[0:2], b[0:2])
+    str2 = b.replace(b[0:2], a[0:2])
+    return " ".join((str1, str2))
 
 
 # Provided simple test() function used in main() to print
