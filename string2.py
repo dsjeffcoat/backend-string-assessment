@@ -4,7 +4,7 @@ Kenzie assignment: String2
 """
 # Your name, plus anyone who helped you with this assignment.
 # Give credit where credit is due.
-__author__ = "???"
+__author__ = "Diarte Jeffcoat w/ help from [w3resource] (https://www.w3resource.com/python-exercises/string/python-data-type-string-exercise-7.php) and [Stack Overflow] (https://stackoverflow.com/questions/44769508/could-you-explain-the-solution-to-front-back-google-python-exercise)"
 
 # Copyright 2010 Google Inc.
 # Licensed under the Apache License, Version 2.0
@@ -23,8 +23,11 @@ __author__ = "???"
 
 
 def verbing(s):
-    # your code here
-    return
+    if len(s) > 3 and s.endswith("ing"):
+        s += "ly"
+    elif len(s) > 3 and not s.endswith("ing"):
+        s += "ing"
+    return s
 
 
 # E. not_bad
@@ -37,9 +40,13 @@ def verbing(s):
 
 
 def not_bad(s):
-    # your code here
-    return
+    notstr = s.find("not")
+    badstr = s.find("bad")
 
+    if badstr > notstr and notstr > 0 and badstr > 0:
+        result = s.replace(s[notstr:(badstr+3)], 'good')
+        return result
+    return s
 
 # F. front_back
 # Consider dividing a string into two halves.
@@ -52,8 +59,13 @@ def not_bad(s):
 
 
 def front_back(a, b):
-    # your code here
-    return
+    asplit = int((len(a)+1) / 2)
+    bsplit = int((len(b)+1) / 2)
+    # if len(a) % 2 == 1:
+    #     asplit = asplit + 1
+    # if len(b) % 2 == 1:
+    #     bsplit = bsplit + 1
+    return a[:asplit] + b[:bsplit] + a[asplit:] + b[bsplit:]
 
 
 # Provided simple test() function used in main() to print
